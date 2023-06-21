@@ -4,39 +4,36 @@ pipeline{
 
 // uncomment the following lines by removing /* and */ to enable
     tools{
-    nodejs   ‘nodejs’' 
+       nodejs 'nodejs' 
     }
-  
+    
 
     stages{
-        stage('build'){
+        stage('Build'){
             steps{
-                echo 'this is to build the app’
+                echo 'this is to build the app'
                 sh 'npm install'
             }
         }
-        stage('test'){
+        stage('Test'){
             steps{
-                echo 'this is to test the app’
+                echo 'this is to test the app'
                 sh 'npm test'
             }
         }
-        stage('package'){
+        stage('Package'){
             steps{
                 echo 'this is to package the app'
-                sh 'npm run package'                
-            }
+                sh 'npm run package'
+             }
         }
     }
     
     post{
         always{
-            echo 'Hello there…this my first pipeline through code… '
+            echo 'Hello There...This is my first pipeline through code...'
         }
         
     }
     
 }
-
-
-
